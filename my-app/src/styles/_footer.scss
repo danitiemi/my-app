@@ -1,0 +1,45 @@
+footer {
+  width: 100%;
+  min-height: 30px;
+  padding: 20px;
+  text-align: center;
+
+  .copyright {
+    font-size: 1em;
+    color: #CCC;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding-right: 40px;
+
+    li {
+      padding: 5px 10px;
+      font-size: 2em;
+
+      a:hover {
+        opacity: 0.5;
+      }
+
+      .fa-github-square {
+        color:#000;
+      }
+      
+      .fa-dribbble-square {
+        /* color: #c7057d; */
+        color: #b72582;
+      }
+      
+      .fa-linkedin {
+        color: #0e5782;
+      }
+
+      .fa-instagram {
+        color: #d4c690;
+      }
+    }
+  }
+  
+  
+}
