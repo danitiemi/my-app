@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import update from 'immutability-helper'
 import Note from './Note'
+import NewNote from './NewNote'
 
 class NotesBoard extends Component {
 
@@ -57,9 +58,11 @@ class NotesBoard extends Component {
         </div>
         <div className="container" >
           {this.state.ideas.map((idea) => {
-            return (
-              <Note idea={idea} key={idea.id} />
-            )
+            if(this.state.editingNoteId === idea.id) {
+              return (<NewNote idea={idea} key={idea.id}/>)
+            } else {
+              return (<Note idea={idea} key={idea.id}/>)
+            }
           })}
         
         </div>

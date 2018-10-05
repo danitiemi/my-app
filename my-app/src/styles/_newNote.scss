@@ -1,0 +1,27 @@
+.input {
+  font-family: $font-body;
+  border: 0;
+  background: none;
+  outline: none;
+  margin-top:5px;
+  width: 130px;
+  font-size: 18px;
+}
+
+.input:focus {
+  border: dashed 1px $primary-color;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  cursor: pointer;
+  margin: -5px;
+  color: $alert-color;
+}
+
