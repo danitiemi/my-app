@@ -12,7 +12,8 @@ class NotesBoard extends Component {
     this.state = {
       ideas: [],
       editingNoteId: null,
-      notification: ''
+      notification: '',
+      transitionIn: false
     }
   }
 
@@ -59,12 +60,16 @@ class NotesBoard extends Component {
     })
     this.setState({
       ideas: ideas,
-      notification: 'Changes saved!'
+      notification: 'Changes saved!',
+      transitionIn: true
     })
   }
 
   resetNotification = () => {
-    this.setState({notification: ''})
+    this.setState({
+      notification: '',
+      transitionIn: false
+    })
   }
 
   render() {
@@ -74,10 +79,10 @@ class NotesBoard extends Component {
           <button className="addButton" onClick={this.addNote}>
             <i className="fas fa-plus"></i> <i className="fas fa-plus"></i>
           </button>
-          {/* <Notification in={this.state.transitionIn} notification={this.state.notification} /> */}
-          <span className="notification">
+          <Notification in={this.state.transitionIn} notification={this.state.notification} />
+          {/* <span className="notification">
             {this.state.notification}
-          </span>
+          </span> */}
         </div>
         <div className="container" >
           {this.state.ideas.map((idea) => {
