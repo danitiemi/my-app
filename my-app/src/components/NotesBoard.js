@@ -48,6 +48,16 @@ class NotesBoard extends Component {
     .catch(error => console.log(error))
   }
 
+  // find the index of the edited idea in the array, 
+  // and then use the $set command to replace the old value with the new one
+  updateNote = (idea) => {
+    const ideaIndex = this.state.ideas.findIndex(x => x.id === idea.id)
+    const ideas = update(this.state.ideas, {
+      [ideaIndex]: {$set: idea}
+    })
+    this.setState({ideas: ideas})
+  }
+
   render() {
     return (
       <section>
@@ -59,7 +69,7 @@ class NotesBoard extends Component {
         <div className="container" >
           {this.state.ideas.map((idea) => {
             if(this.state.editingNoteId === idea.id) {
-              return (<NewNote idea={idea} key={idea.id}/>)
+              return (<NewNote idea={idea} key={idea.id} updateNote={this.updateNote}/>)
             } else {
               return (<Note idea={idea} key={idea.id}/>)
             }
