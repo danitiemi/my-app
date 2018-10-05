@@ -75,7 +75,17 @@ class NotesBoard extends Component {
   enableEditing = (id) => {
     this.setState({ editingNoteId: id },
       () => { this.title.focus() })
-  }    
+  }
+  
+  deleteNote = (id) => {
+    axios.delete(`http://localhost:3001/api/v1/ideas/${id}`)
+    .then(response => {
+      const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
+      const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]]})
+      this.setState({ideas: ideas})
+    })
+    .catch(error => console.log(error))
+  }
 
 
   render() {
@@ -98,7 +108,9 @@ class NotesBoard extends Component {
                 titleRef= {input => this.title = input} 
                 resetNotification={this.resetNotification}/>)
             } else {
-              return (<Note idea={idea} key={idea.id} onClick={this.enableEditing}/>)
+              return (<Note idea={idea} key={idea.id} 
+                onClick={this.enableEditing}
+                onDelete={this.deleteNote}/>)
             }
           })}
         

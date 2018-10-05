@@ -16,8 +16,21 @@
   color: $secondary-color
 }
 
+.text {
+  font-family: $font-body;
+  font-size: 21px;
+  color: $placeholder-color
+}
+
 .tile:hover .deleteButton {
   visibility: visible;
 }
 
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  cursor: pointer;
+  margin: -5px;
+  color: $alert-color;
+}
 
