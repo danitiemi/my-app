@@ -3,6 +3,7 @@ import axios from 'axios'
 import update from 'immutability-helper'
 import Note from './Note'
 import NewNote from './NewNote'
+import Notification from './Notification'
 
 class NotesBoard extends Component {
 
@@ -10,7 +11,8 @@ class NotesBoard extends Component {
     super(props)
     this.state = {
       ideas: [],
-      editingNoteId: null
+      editingNoteId: null,
+      notification: ''
     }
   }
 
@@ -55,7 +57,14 @@ class NotesBoard extends Component {
     const ideas = update(this.state.ideas, {
       [ideaIndex]: {$set: idea}
     })
-    this.setState({ideas: ideas})
+    this.setState({
+      ideas: ideas,
+      notification: 'Changes saved!'
+    })
+  }
+
+  resetNotification = () => {
+    this.setState({notification: ''})
   }
 
   render() {
@@ -65,11 +74,15 @@ class NotesBoard extends Component {
           <button className="addButton" onClick={this.addNote}>
             <i className="fas fa-plus"></i> <i className="fas fa-plus"></i>
           </button>
+          {/* <Notification in={this.state.transitionIn} notification={this.state.notification} /> */}
+          <span className="notification">
+            {this.state.notification}
+          </span>
         </div>
         <div className="container" >
           {this.state.ideas.map((idea) => {
             if(this.state.editingNoteId === idea.id) {
-              return (<NewNote idea={idea} key={idea.id} updateNote={this.updateNote}/>)
+              return (<NewNote idea={idea} key={idea.id} updateNote={this.updateNote} resetNotification={this.resetNotification}/>)
             } else {
               return (<Note idea={idea} key={idea.id}/>)
             }
