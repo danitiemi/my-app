@@ -9,7 +9,7 @@ class NotesBoard extends Component {
     super(props)
     this.state = {
       ideas: [],
-      editingIdeaId: null
+      editingNoteId: null
     }
   }
 
@@ -34,10 +34,15 @@ class NotesBoard extends Component {
     )
     .then(response => {
       console.log(response)
+      // immutability-helper "update": make a new copy of this.state.ideas 
+      // and use the $splice command to insert the new idea (in response.data) at the 0th index of this array
       const ideas = update(this.state.ideas, {
         $splice: [[0, 0, response.data]]
       })
-      this.setState({ideas: ideas})
+      this.setState({
+        ideas: ideas,
+        editingNoteId: response.data.id
+      })
     })
     .catch(error => console.log(error))
   }
