@@ -11,7 +11,7 @@ class Footer extends Component {
           <li><a href="https://www.linkedin.com/in/danitiemi" alt="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a></li>
           <li><a href="https://instagram.com/whereisit.dani" alt="Instagram" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a></li>
         </ul>
-        <p class="copyright">&copy;2018 Dani Tiemi</p>
+        <p className="copyright">&copy;2018 Dani Tiemi</p>
       </footer>
     )
   }

@@ -1,0 +1,23 @@
+.tile {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  background: $tile-color;
+  float: left;
+  font-size: 1em;
+  text-align: left;
+  box-shadow: 1.5px 1.5px $dark-grey;
+  padding: 10px;
+  font-family: $font-body;
+}
+
+.title {
+  font-family: $font-stack;
+  color: $secondary-color
+}
+
+.tile:hover .deleteButton {
+  visibility: visible;
+}
+
+

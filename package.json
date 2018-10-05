@@ -1,0 +1,33 @@
+{
+  "name": "danitiemi-api",
+  "version": "1.0.0",
+  "description": "personal website with superpowers",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danitiemi/my-app.git"
+  },
+  "keywords": [
+    "portfolio",
+    "webapp",
+    "react",
+    "rails"
+  ],
+  "author": "DaniTiemi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danitiemi/my-app/issues"
+  },
+  "homepage": "https://github.com/danitiemi/my-app#readme"
+}

@@ -1,0 +1,40 @@
+/* Styles for larger screens */
+* {
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 720px) {
+
+  .flex {
+      display: flex;
+      max-width: 1200px;
+      justify-content: space-around;
+      margin: 0 auto;
+  }
+
+  header {
+    min-height: 500px;
+  }
+
+  .nav {
+    max-width: 1200px;
+  }
+
+  main {
+    padding-top: 50px;
+
+    p {
+      line-height: 1.6em;
+    }
+  }
+
+  footer {
+    font-size: 1.3em;
+    // margin: 40px auto;
+  }
+
+}
+
+.clearfix {
+  clear: both;
+}
