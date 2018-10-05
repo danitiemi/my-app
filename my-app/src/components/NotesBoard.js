@@ -72,6 +72,12 @@ class NotesBoard extends Component {
     })
   }
 
+  enableEditing = (id) => {
+    this.setState({ editingNoteId: id },
+      () => { this.title.focus() })
+  }    
+
+
   render() {
     return (
       <section>
@@ -87,9 +93,12 @@ class NotesBoard extends Component {
         <div className="container" >
           {this.state.ideas.map((idea) => {
             if(this.state.editingNoteId === idea.id) {
-              return (<NewNote idea={idea} key={idea.id} updateNote={this.updateNote} resetNotification={this.resetNotification}/>)
+              return (<NewNote idea={idea} key={idea.id} 
+                updateNote={this.updateNote}
+                titleRef= {input => this.title = input} 
+                resetNotification={this.resetNotification}/>)
             } else {
-              return (<Note idea={idea} key={idea.id}/>)
+              return (<Note idea={idea} key={idea.id} onClick={this.enableEditing}/>)
             }
           })}
         

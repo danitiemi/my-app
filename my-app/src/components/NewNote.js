@@ -39,7 +39,8 @@ class NewNote extends Component {
         <form onBlur={this.handleBlur}>
           <input className='input' type='text' 
             name='title' placeholder='New Note Title' 
-            value={this.state.title} onChange={this.handleInput} />
+            value={this.state.title} onChange={this.handleInput} 
+            ref={this.props.titleRef}/>
           <textarea className='input' name='body'
             placeholder='Write Note'
             value={this.state.body} onChange={this.handleInput}>
