@@ -3,6 +3,7 @@ header {
   background-size: cover;
   overflow: hidden;
   color: $text-color;
+  background-color: $grey-light;
 
   .welcome {
     width: 50%;
@@ -26,12 +27,12 @@ header {
   }
  
   .superpower {
-    color: $secondary-bright;
+    color: $secondary-color;
   }
   
   .tag-name {
-    color: $primary-light;
-    font-size: 2.5em;
+    color: $primary-color;
+    font-size: 2.7em;
   }
 
 }

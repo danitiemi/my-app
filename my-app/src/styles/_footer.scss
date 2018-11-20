@@ -3,6 +3,12 @@ footer {
   min-height: 30px;
   padding: 20px;
   text-align: center;
+  // position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  overflow: auto;
 
   .copyright {
     font-size: 1em;
