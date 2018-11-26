@@ -1,46 +1,15 @@
-# README
+### My website and a Single-Page App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a single-page web application that allows users to easily add and save short notes. Change of heart? No problem! They can also edit or delete any notes they wish. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# my-app
-
-Brilliant Ideas App
-===================
-
-!["Gif: Brilliant Ideas App"](https://github.com/danitiemi/ideasBoard-react/blob/master/ideaboard/public/docs/ideas.gif)
-
-
-Brilliant Ideas is a single-page web application that allows users to easily add and save short notes with "brilliant ideas" to their wall. Change of heart? No problem! They can also edit or delete any notes they wish. 
-
-### Features
+## Features
 
 - Primarily a Single Page CRUD App.
-- Add, save, edit and delete ideas.
+- Add, save, edit and delete notes.
 - Back-end API with 3 endpoints.
 
 
-
-### Technical Information/ Stack
+## Technical Information/ Stack
 
   - Rails
   - Axios
@@ -48,7 +17,6 @@ Brilliant Ideas is a single-page web application that allows users to easily add
   - HTMl
   - CSS
  
-
 
 ### Dependencies
 
